@@ -1,4 +1,7 @@
 from random import randrange
+import random
+import re
+import string
 print("😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎")
 print("==============================================================")
 print(" PATI 1) MASTER STR (index, split, replace, lower, upper, title)") 
@@ -237,5 +240,194 @@ for kle,vale in diksyone.items():
     diksyone_copi[kle]=vale
 print("diksyone orijinal la : ",diksyone)
 print("dikdyone kopi a : ",diksyone_copi)
-#Ou gen lis eleman, kreye yon nouvo lis ki gen chak 3 eleman yo gwoupe anndan yon tipl. Ekzanpgit
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
 
+#6)Anndan yon diksyonè ki gen kle ak valè(valè yo ka nenpòt tip done). Ajoute yon underscore devan ak dèyè tout valè ki se chenn yo. Ekzanpdiksyone={
+diksyone={ "kle1":"laptop",
+    "kle2":"ram",
+    "kle3":"tam"
+}
+for kle, vale in diksyone.items():
+    if isinstance(vale,str):
+        diksyone[kle]="_" +vale+ "_"
+print(diksyone)        
+#7)Nan yon diksyonè ki gen valè ki se chenn sèlman. Kreye yon nouvo diksyonè ki gen tout eleman ki gen valè ki dijit yo sèlman. Ekzanp:
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+
+diksyone={ "kle1":"laptop",
+    "kle2":"ram",
+    "kle3":"123",
+    "kle4":"25"
+}
+nouv_dik={}
+for kle ,vale in diksyone.items():
+    if vale.isdigit():
+        nouv_dik[kle]=vale
+print(nouv_dik)
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+
+#8) Pakouri yon disksyonè, pou w mete l sou fòm lis, kote chak eleman nan disksyonè sa, vin sou fòm tipl(kle, valè) anndan lis la
+diksyone={ "kle1":"laptop",
+    "kle2":"ram",
+    "kle3":"123",
+    "kle4":"25"
+}
+list_tipl=list(diksyone.items())
+print(list_tipl)
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+
+#9) Pakouri yon lis tipl, pou w mete l sou fòm diksyonè
+list_tipl= [("a",1), ("b",2),("c",3),("d",4)]
+diksyone={kle: vale for kle,vale in list_tipl}
+print(diksyone)
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+
+#10) Kole 2 diksyonè ansanm pou fè youn, kote si gen eleman ki gen menm kle ap konkatene valè, swivan kondisyon sa yo:
+diksyone1={ "kle1":"laptop",
+    "kle2":"ram",
+    "kle3":"123",
+    "kle4":"25"
+}
+diksyone2={ "kle1":"laptop",
+    "kle2":"ram",
+    "kle3":"123",
+    "kle4":"25"
+}
+diksyone_ansanm={}
+for kle,vale in diksyone1.items():
+    if kle in diksyone2 and diksyone2[kle] != vale:
+        diksyone_ansanm[kle]=vale + " "+diksyone2[kle]
+    else:
+        diksyone_ansanm[kle]= vale
+for kle,vale in diksyone2.items():
+    if kle not in diksyone1:
+        diksyone_ansanm[kle]=vale
+print("diksyone 1 an : ",diksyone1)
+print("diksyone 2 a : ",diksyone2)
+print("diksyone yo ansanm se : ",diksyone_ansanm)   
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+print("😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎")
+print("===============================================================")
+print(" MASTER FOCTION CONCEPT") 
+print("===============================================================")
+print("😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎")
+#kreye yon fonksyon ki ap pran yon paramèt yon mo, epi li retounen envès la.
+def mo_envese(mot):
+    mo_ranvese = mot[::-1]
+    return mo_ranvese
+
+mo_orijinal="parilus"
+test=mo_envese(mo_orijinal)
+print(test)
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+#2) kreye yon fonksyon ki pou jenere yon kòd aleyatwa ki gen n karaktè alfabetik.
+def gene_kod_aleyatwa(n):
+    alfabe=string.ascii_letters
+    kod=''.join(random.choice(alfabe)for _ in range(n))
+    return kod
+kod_aleya=gene_kod_aleyatwa(10)
+print(kod_aleya)
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+#3) kreye yon fonksyon ki pou jenere yon kòd aleyatwa ki gen n karaktè alfabetik, san repetisyon
+def gene_ale_san_rep(n):
+    alfabe=list(string.ascii_letters)
+    random.shuffle(alfabe)
+    kod=''.join(alfabe[:n])
+    return kod
+kod_aleyatwa=gene_ale_san_rep(10)
+print(kod_aleyatwa)
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+#4) kreye yon fonksyon ki pou jenere yon kòd aleyatwa ki gen n karaktè alafanimerik, san repetisyon
+def jene_kod_ale(n):
+    karkte=string.ascii_letters + string.digits
+    kod=''.join(random.sample(karkte,n))
+    return kod
+kod_aley= jene_kod_ale(12)
+print(kod_aley)
+# 5)Ou gen yon lis chenn. Jenere yon SLUG apati chenn nan. Nan yon SLUG, tout karaktè ki akseptab yo se: alfanimerik ak "-"
+def jere_lug(chenn):
+    slug= re.sub(r'[^a-zA-Z0-9-]', '-', chenn)
+    slug=re.sub(r'-+','-',slug)
+    slug=slug.lower()
+    return slug
+   
+chenn_og="sa c egzanp pou n ka teste l"
+test=jere_lug(chenn_og)
+print(test)
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+# 6) Kreye yon fonksyon ki ap separe chak lèt nan yon mo ak yon vigil
+def separe(mo,vigil):
+    mot_sep=vigil.join(mo)
+    return mot_sep
+men_mo="bonjou"
+vig=","
+mo_sepp=separe(men_mo,vig)
+print(mo_sepp)
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+#7)Kreye yon fonksyon ki ap kripte yon mo, avèk endèks li nan alfabè a. Chak karaktè dwe separe ak yon tirè
+def kripte(mo):
+    alfabe="vdvgugfasfvgfuwgefjdbfhufgubv"
+    mo_krip=""
+
+    for let in mo:
+        if let.isalpha():
+            endeks=alfabe.index(let.lower())
+            mo_krip+= str(endeks)+"-"
+        else:
+            mo_krip+=let
+    return  mo_krip   
+mo_og="bonjour"
+mo_pp=kripte(mo_og)
+print(mo_pp)
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+
+#8) Kreye yon fonksyon ki ap dekripte yon mo ki fèt ak endèks chak lèt nan alfabè a, separe ak yon tirè.
+def dekripte(mo_dekripte):
+     alfabè = "abcdefghijklmnopqrstuvwxyz"
+     mo_dekripte = ""
+     endèks = ""
+
+     
+     for karakter in mot_kripte:
+        if karakter.isalpha() or karakter == "-":
+            if karakter == "-":
+                if endèks:
+                    endèks = int(endèks)  
+                    mo_dekripte += alfabè[endèks]  
+                    endèks = ""  
+            else:
+                endèks += karakter  
+        else:
+            mo_dekripte += karakter 
+
+     return mo_dekripte
+
+mot_kripte = "1-14-13-1-18"
+mot_dekripte = dekripte(mot_kripte)
+print(mot_dekripte)
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+
+#9) Kreye yon fonksyon ki ap pran 2 paramèt, epi ki pèmite valè yo. Answit li retounen tou 2 valè yo sou fòm Tuple.
+def retounen_dyo_valè(valè1, valè2):
+    rezilta = (valè1, valè2)  
+    return rezilta
+
+valè1 = 10
+valè2 = "Hello"
+rezilta = retounen_dyo_valè(valè1, valè2)
+print(rezilta)
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
+
+#10) Kreye yon fonksyon ki ap pran yon non an paramèt, epi ki retounen inisyal yo. Atansyon ak non konpoze ak tirè yo
+def inisyal_nan_non(non):
+    non_san_tire = non.replace("-", " ")  
+    mo_konpoze = non_san_tire.split()  
+    inisyal = "".join([mo[0].upper() for mo in mo_konpoze])  
+    return inisyal
+
+
+non = "Mata_pata"
+inisyal_non = inisyal_nan_non(non)
+print(inisyal_non)
+print("🛫🛫🛫🛫🛫🛬🛫🛫🛫🛫🛫🛫🛬🛫🛫🛬🛬🛬🛬🛬🛫🛫🛬🛬🛬🛬🛬🛬🛫🛫🛫🛫🛫🛫🛫🛬")
