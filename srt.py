@@ -70,6 +70,7 @@ print(" PATI 2) MASTER LIST (Union & Intersection & Lis comprehension)")
 print("===============================================================")
 print("😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎😎")
 # 1) Kreye yon lis eleman ki divizib pa 2, nan entèval [0-n] enklizif
+
 while True:
     try:
         nonb=int (input("wap antre yn nonb epi pwogram nan ap kalkile tout nonb ki divizib pa 2 nan enteval la"))
@@ -80,6 +81,9 @@ while True:
         break
     except ValueError:
         print("sa w antre a pa valid antre yn nonb ki ka valide")
+
+nonb=int (input("wap antre yn nonb epi pwogram nan ap kalkile tout nonb ki divizib pa 2 nan enteval la"))
+
 lis_la=[]
 for i in range(nonb+1):
     if i % 2 ==0:
@@ -102,7 +106,11 @@ for i in lis_chenn_miniskil:
     chenn_majiskil.append(i.upper())
 print("men lis lan an majiskil",chenn_majiskil)
 print("🛫🛫🛫🛫🛫🛫🛫🛬🛬🛫🛫🛬🛫🛫🛫🛫🛫🛫🛫🛫🛫🛫🛬🛬🛬🛬🛫🛬🛬🛫🛫🛬🛬🛫🛬🛫🛫🛫🛫🛫")
+
 # 4) Ou gen yon lis, kreye yon nouvo lis ki fèt ak eleman ki nan endèks ki divizib pa 3 yo sèlman
+
+#Ou gen yon lis, kreye yon nouvo lis ki fèt ak eleman ki nan endèks ki divizib pa 3 yo sèlman
+
 lis_mw=[1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 print("men lis m t gen avan",lis_mw)
 lis_poum=[]
@@ -111,6 +119,7 @@ for i in range(len(lis_mw)):
         lis_poum.append(lis_mw[i])
 print("men lis ki divisib pa 3 yo: ",lis_poum)
 print("🛫🛫🛫🛫🛫🛫🛫🛬🛬🛫🛫🛬🛫🛫🛫🛫🛫🛫🛫🛫🛫🛫🛬🛬🛬🛬🛫🛬🛬🛫🛫🛬🛬🛫🛬🛫🛫🛫🛫🛫")
+
 # 5) Ou gen lis eleman, kreye yon nouvo lis ki gen chak 3 eleman yo gwoupe anndan yon tipl. Ekzanpgit
 lis_mw=[1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 lis_d=[]
@@ -228,3 +237,5 @@ for kle,vale in diksyone.items():
     diksyone_copi[kle]=vale
 print("diksyone orijinal la : ",diksyone)
 print("dikdyone kopi a : ",diksyone_copi)
+#Ou gen lis eleman, kreye yon nouvo lis ki gen chak 3 eleman yo gwoupe anndan yon tipl. Ekzanpgit
+
