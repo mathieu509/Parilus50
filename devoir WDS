@@ -1,11 +1,12 @@
+
 import csv
 import boto3
 
 file_path = 'TXTSONDAGE.txt'
 bucket_name = 'esihsondage'
 region_name = 'us-east-1'
-access_key = "AKIAQTWKRAU5LMMLJGXI" 
-secret_key = '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'
+access_key = "AKIAQTWKRAU5PDH2KKTG" 
+secret_key = '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'
 
 class Student:
     def __init__(self, int_qt_pays, age, niveau, pays_vise, r_depart, obj_depart, dure_prevu, int_retour):
